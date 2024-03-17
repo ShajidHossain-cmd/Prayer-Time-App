@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        background: "url('src/img/background.png')",
+        background: "url('https://i.ibb.co/R7VMFdR/background.png')",
       },
       colors: {
         "regal-yellow": "#e3ab4c",
