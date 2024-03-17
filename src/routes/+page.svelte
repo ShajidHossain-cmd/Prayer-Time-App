@@ -12,7 +12,7 @@
   async function fetchData(latitude, longitude, date) {
     try {
       const res = await fetch(
-        `http://api.aladhan.com/v1/timings/${date}?latitude=${latitude}&longitude=${longitude}&method=1`
+        `https://api.aladhan.com/v1/timings/${date}?latitude=${latitude}&longitude=${longitude}&method=1`
       );
       if (!res.ok) {
         throw new Error('Failed to fetch data from the Aladhan API');
