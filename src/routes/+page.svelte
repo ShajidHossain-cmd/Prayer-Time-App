@@ -68,6 +68,16 @@
         <h2 class="text-regal-yellow text-4xl font-serif text-center font-semibold mb-4">PRAYER</h2>
 
         {#if item.data}
+        <div class= " p-4 flex items-center justify-between">
+           <div class= "bg-regal-yellow p-4 flex w-40 items-center justify-between shadow-lg border-regal-blue ">
+    <span class="font-semibold">SEHRI</span>
+    <span>{to12HourFormat(item.data.timings.Fajr)}</span>
+</div>
+<div class="bg-regal-blue p-4 flex w-40 items-center justify-between shadow-lg border-regal-blue ">
+              <span class="font-semibold uppercase">IFTAR</span>
+              <span>{to12HourFormat(item.data.timings.Maghrib)}</span>
+            </div>
+        </div>
           <div class="flex flex-col text-xl gap-4 ">
            <div class= "bg-regal-yellow p-4 flex w-96 items-center justify-between shadow-lg border-regal-blue ">
     <span class="font-semibold">FAJIR</span>
