@@ -7,7 +7,7 @@
   let item = {};
   let latitude;
   let longitude;
-  let locationObtained = false;
+ 
   let currentDate;
 
   async function fetchData(latitude, longitude, date) {
@@ -19,6 +19,7 @@
         throw new Error('Failed to fetch data from the Aladhan API');
       }
       item = await res.json();
+   
     } catch (error) {
       console.error('Error fetching data from the Aladhan API:', error);
     }
@@ -34,7 +35,7 @@
         async position => {
           latitude = position.coords.latitude;
           longitude = position.coords.longitude;
-          locationObtained = true; // Set to true when location is obtained
+    
           const today = new Date();
           currentDate = `${today.getDate()}-${today.getMonth() + 1}-${today.getFullYear()}`;
           fetchData(latitude, longitude, currentDate); // Fetch data once location and date are obtained
@@ -68,9 +69,11 @@
     <div class=" bg-center bg-[url('https://i.ibb.co/R7VMFdR/background.png')] absolute inset-0 flex justify-center items-center">
       <div class=" rounded-lg p-6">
         <h2 class="text-regal-yellow text-4xl font-serif text-center font-semibold mb-4">PRAYER</h2>
+        <h2 class="text-regal-yellow text-4xl font-serif text-center font-semibold mb-4">REMINDER</h2>
+       
 
         {#if item.data}
-        
+         <h2 class="text-regal-yellow text-3xl font-serif text-center font-semibold mb-4">{`${item.data.date.hijri.day} ${item.data.date.hijri.month.en} ${item.data.date.hijri.year}`}</h2>
         <div class= " p-4 flex items-center justify-between">
            <div class= "bg-regal-yellow p-4 flex w-40 items-center justify-between shadow-lg border-regal-blue ">
     <span class="font-semibold">SEHRI</span>
