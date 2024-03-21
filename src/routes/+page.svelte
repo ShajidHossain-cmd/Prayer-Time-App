@@ -1,7 +1,7 @@
 
-<script>
 
-  import { onMount } from 'svelte';
+<script>
+ import { onMount } from 'svelte';
 
   let item = {};
   let latitude;
@@ -35,7 +35,7 @@
           longitude = position.coords.longitude;
           locationObtained = true; // Set to true when location is obtained
           const today = new Date();
-          currentDate = `${today.getMonth() + 1}-${today.getDate()}-${today.getFullYear()}`;
+          currentDate = `${today.getDate()}-${today.getMonth() + 1}-${today.getFullYear()}`;
           fetchData(latitude, longitude, currentDate); // Fetch data once location and date are obtained
         },
         error => {
@@ -54,6 +54,7 @@
     const hour12 = (hour % 12) || 12; // Convert 0 to 12 for midnight
     return `${hour12}:${minutes} ${period}`;
   }
+
 </script>
 
 
@@ -68,6 +69,7 @@
         <h2 class="text-regal-yellow text-4xl font-serif text-center font-semibold mb-4">PRAYER</h2>
 
         {#if item.data}
+        
         <div class= " p-4 flex items-center justify-between">
            <div class= "bg-regal-yellow p-4 flex w-40 items-center justify-between shadow-lg border-regal-blue ">
     <span class="font-semibold">SEHRI</span>
@@ -111,7 +113,3 @@
     </div>
   </div>
 </main> 
-
-
-
-
